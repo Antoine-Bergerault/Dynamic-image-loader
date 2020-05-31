@@ -2,6 +2,13 @@
  
 A js script made to improve image loading and user experience.
 
+## Initialisation
+
+You must include the script that creates a new custom element on each page where you want to use it
+
+```html
+<script src="path/to/ImageElement.js"></script>
+```
 
 ## The custom element
 
