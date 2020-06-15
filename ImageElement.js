@@ -2,6 +2,7 @@ class ImageElement extends HTMLElement{
 
     constructor(){
         super();
+        this.observer = false;
     }
 
     connectedCallback(){
@@ -61,35 +62,26 @@ class ImageElement extends HTMLElement{
         this.active = false;
           
         this.lazyLoad();
-
-        document.addEventListener("scroll", this.lazyLoad);
-        window.addEventListener("resize", this.lazyLoad);
-        window.addEventListener("orientationchange", this.lazyLoad);
     }
 
     lazyOff(){
-        document.removeEventListener("scroll", this.lazyLoad);
-        window.removeEventListener("resize", this.lazyLoad);
-        window.removeEventListener("orientationchange", this.lazyLoad);
+        this.observer = false;
     }
 
     lazyLoad(){
-        if (this.active === false) {
+        if (!this.active) {
             this.active = true;
-            setTimeout(() => {
-              if ((this.img.getBoundingClientRect().top <= window.innerHeight && this.img.getBoundingClientRect().bottom >= 0) && getComputedStyle(this.img).display !== "none") {
-                  this.img.src = this.img.dataset.src;
-                  if(typeof this.img.dataset.srcset != 'undefined'){
-                      this.img.srcset = this.img.dataset.srcset;
-                  }
-      
-                  document.removeEventListener("scroll", this.lazyLoad);
-                  window.removeEventListener("resize", this.lazyLoad);
-                  window.removeEventListener("orientationchange", this.lazyLoad);
-              }
-              this.active = false;
-            }, 200);
-          }
+            this.observer = new IntersectionObserver((entries) => {
+                if(entries[0].isIntersecting === true){
+                    this.img.src = this.img.dataset.src;
+                    if (typeof this.img.dataset.srcset != 'undefined') {
+                        this.img.srcset = this.img.dataset.srcset;
+                    }
+                }
+            });
+
+            this.observer.observe(this);
+        }
     }
 
 }
