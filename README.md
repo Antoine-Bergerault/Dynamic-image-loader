@@ -1,8 +1,10 @@
 # Awesome-image-loader
  
-A js script made to improve image loading and user experience.
+## Lazy-loading based web component for image delivering and UX improvement
 
-## Initialisation
+This code provides a web component to help you deliver images faster on your webpage. By distributing images only when the user needs it, page performance is improved.
+
+## Setup
 
 You must include the script that creates a new custom element on each page where you want to use it
 
@@ -10,7 +12,7 @@ You must include the script that creates a new custom element on each page where
 <script src="path/to/ImageElement.js"></script>
 ```
 
-## The custom element
+### The custom element
 
 Use this simple custom element to make your images loading magically
 
