@@ -8,9 +8,16 @@ This code provides a web component to help you deliver images faster on your web
 
 You must include the script that creates a new custom element on each page where you want to use it
 
+Like this :
 ```html
 <script src="path/to/ImageElement.js"></script>
 ```
+
+Or via a cdn :
+```html
+<script src="https://cdn.jsdelivr.net/gh/Antoine-Bergerault/Awesome-image-loader/ImageElement.js"></script>
+```
+
 
 ### The custom element
 
