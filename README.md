@@ -1,6 +1,6 @@
-# Awesome-image-loader
+# Dynamic-image-loader
  
-## Lazy-loading based web component for image delivering and UX improvement
+## Lazy-loading based web component for image delivery and UX improvement
 
 This code provides a web component to help you deliver images faster on your webpage. By distributing images only when the user needs it, page performance is improved.
 
@@ -15,7 +15,7 @@ Like this :
 
 Or via a cdn :
 ```html
-<script src="https://cdn.jsdelivr.net/gh/Antoine-Bergerault/Awesome-image-loader/ImageElement.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Antoine-Bergerault/Dynamic-image-loader/ImageElement.js"></script>
 ```
 
 
