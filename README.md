@@ -45,12 +45,12 @@ The alt attribute of the traditionnal `<img />` tag
 ```html
 <image-element data-src="path/to/image.png" data-alt="image" />
 ```
-When the image is loaded "image" will be used as the alt tag and will be shown to the screen if an error occurs while try to fetch the image.
+When the image is loaded "image" will be used as the alt tag and will be shown to the screen if an error occurs while trying to fetch the image.
 
 
 - `data-loader`
 
-The text written where the image is loading.
+The text written when the image is loading.
 By default, it is set to `"Loading..."`
 
 
